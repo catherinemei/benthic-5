@@ -17,5 +17,5 @@ export default defineConfig({
   build: {
     target: "esnext",
   },
-  base: "/benthic-2/",
+  base: "/benthic-5/",
 });
