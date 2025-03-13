@@ -124,7 +124,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "8": {
     id: "8",
-    displayName: "Rope 1",
+    displayName: "Rope p",
     description: "",
     descriptionTokens: {
       label: "",
@@ -137,7 +137,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "9": {
     id: "9",
-    displayName: "Rope 2",
+    displayName: "Rope q",
     description: "",
     descriptionTokens: {
       label: "",
@@ -150,7 +150,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "10": {
     id: "10",
-    displayName: "Rope 3",
+    displayName: "Rope r",
     description: "",
     descriptionTokens: {
       label: "",
@@ -163,7 +163,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "11": {
     id: "11",
-    displayName: "Rope 4",
+    displayName: "Rope s",
     description: "",
     descriptionTokens: {
       label: "",
@@ -176,7 +176,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "12": {
     id: "12",
-    displayName: "Rope 5",
+    displayName: "Rope t",
     description: "",
     descriptionTokens: {
       label: "",
@@ -189,7 +189,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "13": {
     id: "13",
-    displayName: "Rope 6",
+    displayName: "Rope u",
     description: "",
     descriptionTokens: {
       label: "",
@@ -202,7 +202,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "14": {
     id: "14",
-    displayName: "Rope 7",
+    displayName: "Rope v",
     description: "",
     descriptionTokens: {
       label: "",
@@ -254,7 +254,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "18": {
     id: "18",
-    displayName: "Hangs: Box B1 hangs from Rope 1",
+    displayName: "Box B1 hangs from Rope p",
     description: "",
     descriptionTokens: {
       label: "",
@@ -267,7 +267,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "19": {
     id: "19",
-    displayName: "Hangs: Pulley A hangs from Rope 2",
+    displayName: "Pulley A hangs from Rope q",
     description: "",
     descriptionTokens: {
       label: "",
@@ -280,7 +280,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "20": {
     id: "20",
-    displayName: "Hangs: Pulley C hangs from Rope 5",
+    displayName: "Pulley C hangs from Rope t",
     description: "",
     descriptionTokens: {
       label: "",
@@ -293,7 +293,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "21": {
     id: "21",
-    displayName: "Hangs: Box B2 hangs from Rope 6",
+    displayName: "Box B2 hangs from Rope u",
     description: "",
     descriptionTokens: {
       label: "",
@@ -306,7 +306,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "22": {
     id: "22",
-    displayName: "Hangs: Rope 2 hangs from ceiling",
+    displayName: "Rope q hangs from ceiling",
     description: "",
     descriptionTokens: {
       label: "",
@@ -319,7 +319,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "23": {
     id: "23",
-    displayName: "Hangs: Rope 5 hangs from ceiling",
+    displayName: "Rope t hangs from ceiling",
     description: "",
     descriptionTokens: {
       label: "",
@@ -332,7 +332,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "24": {
     id: "24",
-    displayName: "Anchor: Pulley B is anchored to Rope 7",
+    displayName: "Pulley B is anchored to Rope v",
     description: "",
     descriptionTokens: {
       label: "",
@@ -345,7 +345,7 @@ export const pulleyHypergraph: Hypergraph = {
   },
   "25": {
     id: "25",
-    displayName: "Anchor: Rope 7 is anchored to Floor",
+    displayName: "Rope v is anchored to Floor",
     description: "",
     descriptionTokens: {
       label: "",

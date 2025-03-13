@@ -133,8 +133,8 @@ export function TraversalOutputComponentKeyboardParentFocus(
       const historyList = history();
 
       if (
-        currentNode().displayName.startsWith("Hangs") ||
-        currentNode().displayName.startsWith("Anchor")
+        currentNode().displayName.includes("hangs") ||
+        currentNode().displayName.includes("anchored")
       ) {
         // Hack for user study - do not let users go up on Hangs/anchor relations
         const parentSection = document.getElementById(`parents-group`);
@@ -315,31 +315,31 @@ export function TraversalOutputComponentKeyboardParentFocus(
       } else {
         titleSection?.focus();
       }
-    } else if (event.key === "Backspace") {
-      setHistory((prev) => {
-        const newHistory = [...prev];
-        const currentNode = newHistory.pop();
-        const previousNodeId = newHistory[newHistory.length - 1];
+    // } else if (event.key === "Backspace") {
+    //   setHistory((prev) => {
+    //     const newHistory = [...prev];
+    //     const currentNode = newHistory.pop();
+    //     const previousNodeId = newHistory[newHistory.length - 1];
 
-        if (previousNodeId) {
-          // used to announce undo action
-          const undoMessage = document.getElementById("undo-text");
-          if (undoMessage) {
-            undoMessage.focus();
-          }
+    //     if (previousNodeId) {
+    //       // used to announce undo action
+    //       const undoMessage = document.getElementById("undo-text");
+    //       if (undoMessage) {
+    //         undoMessage.focus();
+    //       }
 
-          setCurrentNodeId(previousNodeId);
+    //       setCurrentNodeId(previousNodeId);
 
-          // reset focus to previous node after announcement
-          setTimeout(() => {
-            const newNode = document.getElementById(`info-${previousNodeId}`);
-            if (newNode) {
-              newNode.focus();
-            }
-          }, 1000);
-        }
-        return newHistory;
-      });
+    //       // reset focus to previous node after announcement
+    //       setTimeout(() => {
+    //         const newNode = document.getElementById(`info-${previousNodeId}`);
+    //         if (newNode) {
+    //           newNode.focus();
+    //         }
+    //       }, 1000);
+    //     }
+    //     return newHistory;
+    //   });
     } else if (
       event.key === "ArrowLeft" ||
       event.key === "ArrowRight" ||
@@ -481,8 +481,8 @@ export function TraversalOutputComponentKeyboardParentFocus(
         history={history()}
         parentFocusId={
           history().length > 1
-            ? currentNode().displayName.startsWith("Hangs") ||
-              currentNode().displayName.startsWith("Anchor")
+            ? currentNode().displayName.includes("hangs") ||
+              currentNode().displayName.includes("anchored")
               ? "-1"
               : history()[history().length - 2]
             : "-1"
@@ -520,29 +520,32 @@ export function HypergraphNodeComponentKeyboardOnly(
     // If the current node is one of Anchor or Hangs, then only show the node in the sibling list
     // Else filter out all of those nodes
     if (
-      props.node.displayName.startsWith("Hangs") ||
-      props.node.displayName.startsWith("Anchor")
+      props.node.displayName.includes("hangs") ||
+      props.node.displayName.includes("anchored")
     ) {
       return [props.node];
     }
 
-    const adjacentNodes = Array.from(adjacentNodeIds)
+    // const adjacentNodes = Array.from(adjacentNodeIds)
+    //   .map((nodeId) => props.nodeGraph[nodeId])
+    //   .sort((a, b) => {
+    //     // First, sort by priority (high to low)
+    //     const priorityDifference = a.priority - b.priority;
+    //     if (priorityDifference !== 0) {
+    //       return priorityDifference;
+    //     }
+    //     // If priorities are the same, sort by ID (lexicographical order)
+    //     return Number(a.id) - Number(b.id);
+    //   });
+
+      const adjacentNodes = Array.from(adjacentNodeIds)
       .map((nodeId) => props.nodeGraph[nodeId])
-      .sort((a, b) => {
-        // First, sort by priority (high to low)
-        const priorityDifference = a.priority - b.priority;
-        if (priorityDifference !== 0) {
-          return priorityDifference;
-        }
-        // If priorities are the same, sort by ID (lexicographical order)
-        return Number(a.id) - Number(b.id);
-      });
 
     // Hack for user study - do not show any nodes that start with Hangs
     const actualNodes = adjacentNodes.filter((n) => {
       return (
-        !n.displayName.startsWith("Hangs") &&
-        !n.displayName.startsWith("Anchor")
+        !n.displayName.includes("hangs") &&
+        !n.displayName.includes("anchored")
       );
     });
 
@@ -554,8 +557,8 @@ export function HypergraphNodeComponentKeyboardOnly(
 
     // Hack - prevents hangs relation from showing up at top level
     if (
-      props.node.displayName.startsWith("Hangs") ||
-      props.node.displayName.startsWith("Anchor")
+      props.node.displayName.includes("hangs") ||
+      props.node.displayName.includes("anchored")
     ) {
       return [];
     }
@@ -617,7 +620,7 @@ export function HypergraphNodeComponentKeyboardOnly(
               id={`context-${props.node.id}-${idx()}-${parent.id}`}
               aria-label={`${idx() + 1} of ${nonFocusedParentIds().length}. ${
                 parent.displayName
-              } group. Press Enter to select this grouping.`}
+              } group. Press Enter to switch context to this grouping.`}
               onClick={() => props.onNodeClick(props.node.id, parent.id, false)}
               tabIndex="0"
             >
@@ -648,11 +651,11 @@ export function HypergraphNodeComponentKeyboardOnly(
         </For>
       </ul>
 
-      <ul id="undo-text" tabindex="0" aria-label="Pressing Undo">
+      {/* <ul id="undo-text" tabindex="0" aria-label="Pressing Undo">
         <span style={{ "font-weight": "bold" }} aria-hidden={true}>
           Pressing Undo
         </span>
-      </ul>
+      </ul> */}
     </div>
   );
 }
