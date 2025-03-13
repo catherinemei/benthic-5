@@ -37,7 +37,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 3 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -50,7 +50,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 3 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -63,7 +63,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 3 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -258,7 +258,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 2 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -271,7 +271,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 2 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -284,7 +284,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 2 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -297,7 +297,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 2 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -310,7 +310,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 2 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -323,7 +323,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 2 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -336,7 +336,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 2 objects.",
       shortDescription: "",
     },
     parents: ["0"],
@@ -349,7 +349,7 @@ export const pulleyHypergraph: Hypergraph = {
     description: "",
     descriptionTokens: {
       label: "",
-      longDescription: "",
+      longDescription: "; Contains 2 objects.",
       shortDescription: "",
     },
     parents: ["0"],
