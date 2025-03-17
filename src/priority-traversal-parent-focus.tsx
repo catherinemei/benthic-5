@@ -447,7 +447,13 @@ export function TraversalOutputComponentKeyboardParentFocus(
         let curHistory = history();
         const curNodeId = curHistory.pop();
         const oldParent = curHistory.pop();
-        setHistory((prev) => [...curHistory, newParentId, currentNodeId()!]);
+        // Hack for now - this should never happen in regular Benthic
+        // When all nodes are connected to the root
+        if (oldParent === '0') {
+          setHistory((prev) => [oldParent, newParentId, currentNodeId()!]);
+        } else{
+          setHistory((prev) => [...curHistory, newParentId, currentNodeId()!]);
+        }
         setCurrentNodeId(currentNodeId());
 
         const newCurrentNodeSection = document.getElementById(
