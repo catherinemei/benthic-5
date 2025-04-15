@@ -132,13 +132,6 @@ export function TraversalOutputComponentKeyboardParentFocus(
   };
   const handleKeyPress = (event: KeyboardEvent) => {
     if (event.key === "ArrowUp" && event.shiftKey) {
-      // current on one of the nodes/home
-      // two options: go straight to parent in focus if only 1 parent
-      // or option to select which parent
-
-      // currently on one of the parent nodes
-      // select parent node - edge case if there's 1 or 2 nodes in history list
-
       const focusedElement = document.activeElement as HTMLElement;
       const focusedElementId = focusedElement?.id;
       const historyList = history();
@@ -338,31 +331,6 @@ export function TraversalOutputComponentKeyboardParentFocus(
       } else {
         titleSection?.focus();
       }
-    // } else if (event.key === "Backspace") {
-    //   setHistory((prev) => {
-    //     const newHistory = [...prev];
-    //     const currentNode = newHistory.pop();
-    //     const previousNodeId = newHistory[newHistory.length - 1];
-
-    //     if (previousNodeId) {
-    //       // used to announce undo action
-    //       const undoMessage = document.getElementById("undo-text");
-    //       if (undoMessage) {
-    //         undoMessage.focus();
-    //       }
-
-    //       setCurrentNodeId(previousNodeId);
-
-    //       // reset focus to previous node after announcement
-    //       setTimeout(() => {
-    //         const newNode = document.getElementById(`info-${previousNodeId}`);
-    //         if (newNode) {
-    //           newNode.focus();
-    //         }
-    //       }, 1000);
-    //     }
-    //     return newHistory;
-    //   });
     } else if (
       event.key === "ArrowLeft" ||
       event.key === "ArrowRight" ||
@@ -563,18 +531,6 @@ export function HypergraphNodeComponentKeyboardOnly(
       return [props.node];
     }
 
-    // const adjacentNodes = Array.from(adjacentNodeIds)
-    //   .map((nodeId) => props.nodeGraph[nodeId])
-    //   .sort((a, b) => {
-    //     // First, sort by priority (high to low)
-    //     const priorityDifference = a.priority - b.priority;
-    //     if (priorityDifference !== 0) {
-    //       return priorityDifference;
-    //     }
-    //     // If priorities are the same, sort by ID (lexicographical order)
-    //     return Number(a.id) - Number(b.id);
-    //   });
-
       const adjacentNodes = Array.from(adjacentNodeIds)
       .map((nodeId) => props.nodeGraph[nodeId])
 
@@ -623,7 +579,6 @@ export function HypergraphNodeComponentKeyboardOnly(
       >
         <li role='treeitem' id='parents-group-text'>
         <span
-          // aria-hidden={true}
           style={{ "font-weight": "bold" }}
           onClick={() =>
             props.onNodeClick(props.node.id, props.parentFocusId, true)
@@ -674,17 +629,11 @@ export function HypergraphNodeComponentKeyboardOnly(
               onClick={() => props.onNodeClick(props.node.id, adjacent.id)}
               role='treeitem'
             >
-              <span>{`${adjacent.displayName}${adjacent.descriptionTokens?.longDescription}`}</span>
+              <span>{`${adjacent.displayName}${adjacent.description}`}</span>
             </li>
           )}
         </For>
       </ul>
-
-      {/* <ul id="undo-text" tabindex="0" aria-label="Pressing Undo">
-        <span style={{ "font-weight": "bold" }} aria-hidden={true}>
-          Pressing Undo
-        </span>
-      </ul> */}
     </div>
   );
 }
